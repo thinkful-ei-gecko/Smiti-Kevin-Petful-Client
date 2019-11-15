@@ -1,23 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <h1>Welcome to Petful</h1>
+        <p>Petful is an animal shelter application where you can 
+          find dogs and cats to adopt. 
+          Click the button to adopt one or both pets.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <button className="start-button">Let's Adopt</button>
       </header>
     </div>
   );

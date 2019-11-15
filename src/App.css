@@ -20,3 +20,12 @@
 .App-link {
   color: #09d3ac;
 }
+
+.start-button {
+  background-color: white;
+  color: black;
+  padding: 25px 42px;
+  font-size: 28px;
+  margin: 10px 2px;
+  cursor: pointer;
+}
