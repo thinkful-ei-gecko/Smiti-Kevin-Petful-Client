@@ -8,21 +8,18 @@ export default class DashPage extends Component {
     super();
 
     this.state = {
-      cpet: [],
+      cpet: null,
       pets: []
     }
   }
 
 
- componentDidMount(){
-   const interval = setInterval(() => {
-     this.getData();
-     this.showAllPets();
-   }, 30);
-   
+ componentDidMount(){  
+     this.showCurrentPet();
+     this.showAllPets();  
  }
 
- getData(){
+ showCurrentPet(){
    fetch('http://localhost:8080/api/currentpet',{
      method: 'GET'
    })
@@ -46,14 +43,19 @@ adoptPet = (e) => {
   fetch('http://localhost:8080/api/adopt', {
     method: 'DELETE',
   })
+  .then( () => {
+    this.showAllPets();
+    this.showCurrentPet();
+  }
+  )
 }
 
   
   render() {
     
     return (
-      <div>
-        {this.state.cpet === 'null'? 'There is no more pets to be adopted': 
+      <div className="container">
+        {!this.state.cpet? 'There is no more pets to be adopted': 
         <>  
         <h1>{this.state.cpet.name}</h1>  
         <img src={this.state.cpet.imageURL} alt={this.state.cpet.imageDescription}></img>  
@@ -62,10 +64,11 @@ adoptPet = (e) => {
           <li>Sex: <span>{this.state.cpet.sex}</span></li>
           <li>Breed: <span>{this.state.cpet.breed}</span></li>
           <li>Story: <span>{this.state.cpet.story}</span></li>
-          <li>Available:{this.state.cpet.available === 'true'?'Its here to adopt': 'Already Adopted'}</li>
+          <li>Available:{this.state.cpet.available?'Its here to adopt': 'Already Adopted'}</li>
         </ul>
         <button type="button" className="btn-adopt " onClick = {this.adoptPet}>Adopt me!</button>
-      
+        </>
+      }
         <section>
         <h1>All Pets To Adopt</h1>
        
@@ -80,7 +83,7 @@ adoptPet = (e) => {
                 <li>Sex: <span>{pet.sex}</span></li>
                 <li>Breed: <span>{pet.breed}</span></li>
                 <li>Story: <span>{pet.story}</span></li>
-                <li>Available:{pet.available === 'false'?'Its here to adopt': 'Already Adopted'}</li>
+                <li>Available:{pet.available?'Its here to adopt': 'Already Adopted'}</li>
              </ul>
              </>
             ))}
@@ -88,7 +91,7 @@ adoptPet = (e) => {
        
 
         </section>
-        </>}
+      
        
       </div>
      

@@ -42,3 +42,9 @@ img{
 .pet-info{
    list-style-type: none;
 }
+
+/* .pets{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+} */
