@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {BrowserRouter,  Switch, Route} from 'react-router-dom';
+import DashPage from './components/DashPage'
 import './App.css';
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Adopt from "./components/Adopt/Adopt";
-import Home from "./components/Home/Home";
 
-class App extends React.Component{
+function LandingPage(props) {
+  return (
+    <main>
+      <section className="section-landing">
+        <article>Welcome to Petful!</article>
 
+        <a href="/dash">Adopt</a>
+      </section>
+    </main>
+  );
+}
+
+class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <BrowserRouter>
-        <Switch>
-          <Route path='/home' component = {Home} />
-          <Route path='/adopt' component = {Adopt} />
-        </Switch>       
-        </BrowserRouter>     
-      </div>
-    );
+    return <>
+      <header>
+        <a href="/"><h1>Petful</h1></a>
+      </header>
+    <BrowserRouter>
+    <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/dash" component={DashPage} />
+      </Switch>
+    </BrowserRouter>
+      
+    </>;
   }
 }
 

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -16,6 +17,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+div{
+  align-content: center;
+}
 
 .App-link {
   color: #09d3ac;
@@ -28,4 +32,13 @@
   font-size: 28px;
   margin: 10px 2px;
   cursor: pointer;
+}
+
+img{
+  height: 200px;
+  width: 300px;
+}
+
+.pet-info{
+   list-style-type: none;
 }
