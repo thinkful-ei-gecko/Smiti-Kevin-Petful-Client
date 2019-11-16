@@ -57,12 +57,11 @@ export default class DashPage extends Component {
         this.setState({ users: res }, () => {
           if (!this.state.users) {
             this.setState({ cuser: 'YOU' });
-            return;
+          } else {
+            this.wait = setInterval(() => {
+              this.currentUser();
+            }, 3000);
           }
-
-          this.wait = setInterval(() => {
-            this.currentUser();
-          }, 3000);
         });
       });
   }
@@ -74,7 +73,13 @@ export default class DashPage extends Component {
       .then((res) => res.json())
       .then((res) => {
         this.setState({ cuser: res }, () => {
-          this.showUsers();
+          fetch('http://localhost:8080/api/users', {
+            method: 'GET',
+          })
+            .then((res) => res.json())
+            .then((res) => {
+              this.setState({ users: res });
+            });
           if (this.state.cuser === 'YOU') {
             clearInterval(this.wait);
           }
@@ -90,6 +95,7 @@ export default class DashPage extends Component {
       this.showCurrentPet();
       this.showAllPets();
       this.showUsers();
+      this.setState({ cuser: '' });
     });
   };
 
@@ -101,7 +107,6 @@ export default class DashPage extends Component {
 
     return (
       <div className="container">
-        <button>Reset</button>
         <h2>Now Serving: {!this.state.cuser ? ' ' : this.state.cuser}</h2>
         {usersInLine}
 
