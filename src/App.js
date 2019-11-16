@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return <>
       <header className="header">
-        <a href="/"><h1>Petful</h1></a>
+        <a href="/"><h1>Petful Agency</h1></a>
       </header>
     <BrowserRouter>
     <Switch>

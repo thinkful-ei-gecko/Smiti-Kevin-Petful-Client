@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../config';
 
 export default class DashPage extends Component {
   constructor() {
@@ -19,7 +20,7 @@ export default class DashPage extends Component {
   }
 
   showCurrentPet() {
-    fetch('http://localhost:8080/api/currentpet', {
+    fetch( `${config.ENDPOINT}api/currentpet`, {
       method: 'GET',
     })
       .then((res) => res.json())
@@ -29,7 +30,7 @@ export default class DashPage extends Component {
   }
 
   showAllPets() {
-    fetch('http://localhost:8080/api/pets', {
+    fetch(`${config.ENDPOINT}api/pets`, {
       method: 'GET',
     })
       .then((res) => res.json())
@@ -40,7 +41,7 @@ export default class DashPage extends Component {
 
   adoptPet = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8080/api/adopt', {
+    fetch(`${config.ENDPOINT}api/adopt`, {
       method: 'DELETE',
     }).then(() => {
       this.showAllPets();
@@ -49,7 +50,7 @@ export default class DashPage extends Component {
   };
 
   showUsers() {
-    fetch('http://localhost:8080/api/users', {
+    fetch(`${config.ENDPOINT}api/users`, {
       method: 'GET',
     })
       .then((res) => res.json())
@@ -67,13 +68,13 @@ export default class DashPage extends Component {
   }
 
   currentUser() {
-    fetch('http://localhost:8080/api/currentuser', {
+    fetch(`${config.ENDPOINT}api/currentuser`, {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
         this.setState({ cuser: res }, () => {
-          fetch('http://localhost:8080/api/users', {
+          fetch(`${config.ENDPOINT}api/users`, {
             method: 'GET',
           })
             .then((res) => res.json())
@@ -88,7 +89,7 @@ export default class DashPage extends Component {
   }
 
   restart = () => {
-    fetch('http://localhost:8080/api/server', {
+    fetch(`${config.ENDPOINT}api/server`, {
       method: 'PATCH',
     }).then(() => {
       clearInterval(this.wait);
@@ -107,7 +108,8 @@ export default class DashPage extends Component {
 
     return (
       <div className="container">
-        <h2>Now Serving: {!this.state.cuser ? ' ' : this.state.cuser}</h2>
+        <h2>Now Serving: {!this.state.cuser ? ' ' :  this.state.cuser}</h2>
+       
         {usersInLine}
 
         <h2>Adopt Me!</h2>
