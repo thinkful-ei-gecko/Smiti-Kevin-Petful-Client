@@ -104,6 +104,7 @@ currentUser(){
       
 
       <div className="container">
+        <button>Reset</button>
         <h2>Now Serving: {!this.state.cuser ? ' ' : this.state.cuser}</h2>
         {waitingUser}
       

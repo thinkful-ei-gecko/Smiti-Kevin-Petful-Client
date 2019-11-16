@@ -8,6 +8,11 @@ function LandingPage() {
     <main>
       <section className="section-landing">
         <h1>Welcome to Petful!</h1>
+        <p>To adopt a pet, click on the Adopt a pet. You have to wait in a line.
+        Once 'YOU' displays the now serving.</p>
+        <p>You will be displayed with an amazing and fluffy cat and dog that are both 
+        ready to be adopted! </p>
+        <br/>
         <a href="/dash">Adopt a pet</a>
       </section>
     </main>
