@@ -1,7 +1,7 @@
 ## Petful 
 
 
-Live App: [Zeit Link]https://petful-client-amber-ten.now.sh/
+Live App: https://petful-client-amber-ten.now.sh/
 
 ![](landingPage.png)
 ![](dashboard.png)
