@@ -2,7 +2,10 @@
 
 ### Teammate: Kevin Wei && Smiti Shakya
 
+
 Live App: https://petful-client-amber-ten.now.sh/
+
+
 Server Repo Link : https://github.com/thinkful-ei-gecko/Smiti-Kevin-Petful-Server
 
 ![](landingPage.png)
