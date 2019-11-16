@@ -1,16 +1,22 @@
 .App {
   text-align: center;
+  font-size: 20px;
+  background-color: lightgoldenrodyellow;
   
 }
 
 .App-logo {
   height: 40vmin;
 }
+.header{
+  text-align: center;
+}
 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -19,6 +25,14 @@
 }
 div{
   align-content: center;
+}
+
+.section-landing{
+  text-align: center;
+  font-size: 26px;
+  list-style-type: none;
+
+
 }
 
 .App-link {
@@ -43,8 +57,9 @@ img{
    list-style-type: none;
 }
 
-/* .pets{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-} */
+.container{
+  margin: 0 auto;
+  text-align: center;
+  
+}
+
