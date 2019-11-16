@@ -1,5 +1,6 @@
 ## Petful 
 
+### Teammates: Kevin Wei && Smiti Shakya
 
 Live App: https://petful-client-amber-ten.now.sh/
 
