@@ -12,7 +12,7 @@ function LandingPage() {
         Once 'YOU' displays the now serving.</p>
         <p>You will be displayed with an amazing and fluffy cat and dog that are both 
         ready to be adopted! </p>
-        <img src = '/catanddog' alt='imageofcatanddog' />
+        <img src = '/catanddog.jpg' alt='imageofcatanddog' />
         <br/>
         <a href="/dash">Adopt a pet</a>
       </section>

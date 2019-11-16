@@ -6,6 +6,8 @@ Petful is an app to adopt a pet from animal shelter. Users have to wait in line 
 a pet. Once the turn comes, they can pick any
 pets from the available pets to take home.  
 
+![](landingPage.png)
+![](dashboard.png)
 
 ## User Stories
 **Landing Page:**
