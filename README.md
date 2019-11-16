@@ -1,10 +1,7 @@
 ## Petful 
 
-### Summary
 
-Petful is an app to adopt a pet from animal shelter. Users have to wait in line to adopt
-a pet. Once the turn comes, they can pick any
-pets from the available pets to take home.  
+Live App: [Zeit Link]https://petful-client-amber-ten.now.sh/
 
 ![](landingPage.png)
 ![](dashboard.png)
@@ -25,3 +22,16 @@ pets from the available pets to take home.
 - Unavailable Pets:
   - [ ] I should be able to see the pets that have been adopted by other pet lovers and removed from the shelter.
   - [ ] I should no longer be able to adopt pets that have been removed.
+
+### Summary
+
+Petful is an app to adopt a pet from animal shelter. Users have to wait in line to adopt
+a pet. Once the turn comes, they can pick any
+pets from the available pets to take home.  
+
+
+## Technologies
+
+- React
+- CSS
+- Zeit 
